@@ -3,13 +3,13 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.lang.String;
 
-public class MathSheep extends PApplet {
+public class MathmaticalSheep extends PApplet {
     public void settings() {
         size(640, 360);
     } //size of game screen
 
     static public void main(String[] passedArgs) {
-        String[] appletArgs = new String[]{"MathSheep"};
+        String[] appletArgs = new String[]{"MathmaticalSheep"};
         if (passedArgs != null) {
             PApplet.main(concat(appletArgs, passedArgs));
         } else {
@@ -17,7 +17,7 @@ public class MathSheep extends PApplet {
         }
     }
     //SETTING global variables
-    NumMon[] mons; //floating number monsters on the screen 
+    NumMon[] mons; //floating number monsters on the screen
     float diameter = 40; //diameter of number monster
     float playerDiameter = 50; //detecting size of llama to later calculate when lama reach number monster
     Player player;
@@ -26,7 +26,7 @@ public class MathSheep extends PApplet {
     boolean historyModeOn;
     int score;
     ArrayList <Integer> scoreHistory;
-    int MAX_SCORE_HISTORY = 5; //top five scores are shown in history 
+    int MAX_SCORE_HISTORY = 5; //top five scores are shown in history
     int counter; // switching llama image to make it look walking
     PImage[] llama;
     PImage[] explosion;
@@ -49,8 +49,8 @@ public class MathSheep extends PApplet {
         llama = new PImage[4];
         explosion = new PImage[4];
         for (int i = 0; i < llama.length; i++) {
-            llama[i] = loadImage("llama_" + i + ".png");
-            explosion[i] = loadImage("explosion_" + i + ".png");
+            llama[i] = loadImage("/img/llama_" + i + ".png");
+            explosion[i] = loadImage("/img/explosion_" + i + ".png");
         }
     }
 
@@ -156,7 +156,7 @@ public class MathSheep extends PApplet {
         boolean visible;
         boolean collected;
 
-        NumMon (float initY, int sign) { //initY : y coordinate of number monster, sign : number 
+        NumMon (float initY, int sign) { //initY : y coordinate of number monster, sign : number
             x = width + diameter; // number monster's starting point is right side of screen
             y = initY;
             speed = 3;
